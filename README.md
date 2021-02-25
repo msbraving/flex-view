@@ -1,6 +1,7 @@
 ## flex-view 一些项目中的练习
 
 npm install
+
 npm run serve
 
 ### 自适应可视化 Echarts

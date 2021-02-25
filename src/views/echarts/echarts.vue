@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="center">
-                <chinaMap class="chinaMap"> </chinaMap>
+                <chinaMap class="chinaMap"></chinaMap>
             </div>
             <div class="side">
                 <div class="panel bar">

@@ -3,8 +3,10 @@
 </template>
 
 <script>
-import echarts from 'echarts'
-import 'echarts/map/js/china.js'
+// import echarts from 'echarts'  版本 4.~引入
+// import 'echarts/map/js/china.js'  版本 4.~引入
+import * as echarts from 'echarts';
+import china from '../../assets/js/echarts/china'
 export default {
     data() {
         return {
@@ -18,6 +20,13 @@ export default {
         this.$nextTick(() => {
             this.initChart()
         })
+    },
+    beforeDestroy() {
+        if (!this.chart) {
+            return
+        }
+        this.chart.dispose()
+        this.chart = null
     },
     methods: {
         initChart() {

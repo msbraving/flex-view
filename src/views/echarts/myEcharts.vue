@@ -4,7 +4,8 @@
 </template>
 
 <script>
-import echarts from 'echarts'
+// import echarts from 'echarts'  版本 4.~引入
+import * as echarts from 'echarts';
 export default {
     props: {
         // 可以通过父组件传值定义
