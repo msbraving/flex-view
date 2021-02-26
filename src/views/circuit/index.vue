@@ -6,18 +6,20 @@
                 <floawChart class="floawChart"></floawChart>
             </div>
         </section>
+        <foot class="foot"></foot>
     </div>
 </template>
 
 <script>
 import floawChart from './floaw-chart'
+import foot from './footer'
 export default {
     name: 'circuit',
     data() {
         return {
         }
     },
-    components: { floawChart },
+    components: { floawChart, foot },
     created() { },
     mounted() { },
     methods: {},
@@ -35,7 +37,7 @@ export default {
     }
     section {
         width: 100%;
-        height: calc(100% - 200px);
+        height: 650px;
         padding: 10px 10px 0 10px;
         box-sizing: border-box;
         display: flex;
@@ -49,6 +51,10 @@ export default {
                 height: 100%;
             }
         }
+    }
+    .foot {
+        width: 100%;
+        height: 200px;
     }
 }
 </style>
