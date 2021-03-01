@@ -67,16 +67,16 @@ export default {
                 {
                     name: 'pie3', startAngle: 180, radius: ['50%', '70%'],
                     data: [
-                        { value: 1, name: '', color: '#caedfe' },
-                        { value: 1, name: '', color: '#caedfe' },
-                        { value: 1, name: '', color: '#caeafe' },
-                        { value: 1, name: '', color: '#c9e7fe' },
-                        { value: 1, name: '', color: '#c8e3fe' },
-                        { value: 1, name: '', color: '#c7dffe' },
-                        { value: 1, name: '', color: '#c7dcfe' },
-                        { value: 1, name: '', color: '#c6dafe' },
-                        { value: 1, name: '', color: '#c6d9fe' },
-                        { value: 9, name: '', color: 'rgba(80,150,224,0)' },
+                        { value: 1, name: '300', color: '#caedfe' },
+                        { value: 1, name: '300', color: '#caedfe' },
+                        { value: 1, name: '300', color: '#caeafe' },
+                        { value: 1, name: '300', color: '#c9e7fe' },
+                        { value: 1, name: '300', color: '#c8e3fe' },
+                        { value: 1, name: '300', color: '#c7dffe' },
+                        { value: 1, name: '300', color: '#c7dcfe' },
+                        { value: 1, name: '300', color: '#c6dafe' },
+                        { value: 1, name: '300', color: '#c6d9fe' },
+                        { value: 9, name: '300', color: 'rgba(80,150,224,0)' },
                     ]
                 },
                 {
@@ -110,7 +110,7 @@ export default {
                         type: 'pie',
                         startAngle: 144,
                         clockWise: true,
-                        center: ['50%', '80%'],
+                        center: ['50%', '90%'],
                         radius: ['105%', '106%'],
                         itemStyle: {
                             normal: {
@@ -168,7 +168,7 @@ export default {
                     {
                         type: 'liquidFill',
                         radius: '30%',
-                        center: ['50%', '72%'],
+                        center: ['50%', '82%'],
                         data: [0.5, 0.4, 0.3], // data个数代表波浪数
                         color: ['#e3f7fd', '#b6f1fc', '#83daf7'],
                         shape: 'path://M 100 350 A 150 150 0 1 1 400 350',
@@ -198,7 +198,7 @@ export default {
                 graphic: [{
                     type: 'group',
                     left: 'center',
-                    top: '68%',
+                    top: '79%',
                     children: [{
                         type: 'text',
                         z: 100,
@@ -217,7 +217,7 @@ export default {
                     name: item.name,
                     type: 'pie',
                     startAngle: item.startAngle,
-                    center: ["50%", "80%"],
+                    center: ["50%", "90%"],
                     radius: item.radius,
                     avoidLabelOverlap: false,//防止标签重叠
                     legendHoverLink: false,
@@ -230,9 +230,12 @@ export default {
                         }
                     },
                     label: { // 饼图图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等。
-                        fontSize: 15,
                         position: 'inside',
+                        fontSize: 15,
                     },
+                    // labelLine: {
+                    //     show: false
+                    // },
                     itemStyle: { //图形样式。
                         borderWidth: 5,
                         borderColor: '#fff',
@@ -258,7 +261,11 @@ export default {
                     value: ele.value,
                     name: ele.name,
                     itemStyle: { normal: { color: ele.color } },
-                    label: { rotate: currentAngle, position: 'inside' }
+                    label: {
+                        rotate: currentAngle,
+                        // position: 'inside',
+                        // lineHeight: '20',
+                    },
                 })
             })
             return array
