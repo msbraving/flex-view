@@ -1,5 +1,7 @@
 <template>
-    <div ref="floawChart" />
+    <div class="echarts">
+        <div ref="floawChart"> </div>
+    </div>
 </template>
 
 <script>
@@ -32,6 +34,7 @@ export default {
     methods: {
         initChart() {
             //macarons echarts的一个主题
+            console.log(this.$el)
             this.chart = echarts.init(this.$el)
             let setData = [
                 {
@@ -230,23 +233,18 @@ export default {
                         }
                     },
                     label: { // 饼图图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等。
-                        position: 'inside',
-                        fontSize: 15,
                     },
-                    // labelLine: {
-                    //     show: false
-                    // },
                     itemStyle: { //图形样式。
                         borderWidth: 5,
                         borderColor: '#fff',
                     },
-                    data: this.calcAngle(index, item.data),
+                    data: this.calcAngle(item.data),
                 })
             })
             this.chart.setOption(option)
             window.addEventListener('resize', this.chart.resize)
         },
-        calcAngle(index, data) {//添加data 转换角度
+        calcAngle(data) {//添加data 转换角度
             let sum = data.reduce(function(total, currentValue, currentIndex, arr) {
                 return total + currentValue.value;
             }, 0);
@@ -260,11 +258,23 @@ export default {
                 array.push({
                     value: ele.value,
                     name: ele.name,
-                    itemStyle: { normal: { color: ele.color } },
+                    itemStyle: {
+                        color: ele.color,
+                    },
                     label: {
+                        position: 'inside',
+                        fontSize: 15,
                         rotate: currentAngle,
-                        // position: 'inside',
-                        // lineHeight: '20',
+                        // formatter: '{title|{b}}',
+                        // rich: {
+                        //     title: {
+                        //         padding: 12,
+                        //         height: 30,
+                        //         fontSize: 15,
+                        //         lineHeight: 30,
+                        //         align: 'bottom',
+                        //     },
+                        // }
                     },
                 })
             })

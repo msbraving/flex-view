@@ -22,12 +22,15 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "circuit" */ "../views/circuit/index.vue"),
   },
-  //   {
-  //     path: "/about",
-  //     name: "about",
-  //     component: () =>
-  //       import(/* webpackChunkName: "about" */ "../views/about.vue"),
-  //   },
+  {
+    //问卷调查
+    path: "/questionnaire",
+    name: "questionnaire",
+    component: () =>
+      import(
+        /* webpackChunkName: "about" */ "../views/questionnaire/index.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({

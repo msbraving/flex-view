@@ -5,6 +5,7 @@
             <div class="center">
                 <floawChart class="floawChart"></floawChart>
             </div>
+            <!-- <div class="circleProgress"></div> -->
             <div class="echartsLeft-top">
                 <div class="dot"></div>
                 <div class="dot"></div>
@@ -15,6 +16,9 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
+            <!-- <div class="echartsLeft">
+
+            </div> -->
         </section>
         <foot class="foot"></foot>
     </div>
@@ -63,13 +67,32 @@ export default {
                 height: 100%;
             }
         }
+
+        // @keyframes circleProgress-spin {
+        //     0% {
+        //         transform: rotate(0deg);
+        //     }
+        //     100% {
+        //         transform: rotate(360deg);
+        //     }
+        // }
+        // .circleProgress {
+        //     display: inline-block;
+        //     border: 4px solid rgba(0, 0, 0, 0.1);
+        //     border-left-color: #7983ff;
+        //     border-radius: 50%;
+        //     width: 30px;
+        //     height: 30px;
+        //     animation: donut-spin 1.2s linear infinite;
+        // }
+
         .echartsLeft-top {
             position: relative;
             width: 50%;
             height: 60%;
             .dot:nth-child(1) {
                 position: absolute;
-                right: calc(30% + 100px);
+                right: calc(30% + 105px);
                 top: 50px;
                 width: 10px;
                 height: 10px;
@@ -78,16 +101,34 @@ export default {
             }
             .dot:nth-child(2) {
                 position: absolute;
-                right: calc(30% + 100px);
+                right: calc(30% + 105px);
                 top: 100px;
                 width: 10px;
                 height: 10px;
                 border: 2px solid #5bcfff;
                 border-radius: 50%;
             }
+            .dot:nth-child(2)::before {
+                content: "";
+                position: absolute;
+                top: 2px;
+                right: 5px;
+                width: 60px;
+                height: 2px;
+                background-color: #5bcfff;
+            }
+            .dot:nth-child(2)::after {
+                content: "";
+                position: absolute;
+                top: 6px;
+                right: 62px;
+                width: 2px;
+                height: 490px;
+                background-color: #5bcfff;
+            }
             .dot:nth-child(3) {
                 position: absolute;
-                right: calc(30% + 100px);
+                right: calc(30% + 105px);
                 top: 150px;
                 width: 10px;
                 height: 10px;
@@ -100,7 +141,7 @@ export default {
                 top: 6px;
                 right: 2px;
                 width: 2px;
-                height: 420px;
+                height: 423px;
                 background-color: #468ffe;
             }
         }
@@ -161,7 +202,7 @@ export default {
                 position: absolute;
                 top: 18px;
                 right: 2px;
-                width: 200px;
+                width: 240px;
                 height: 2px;
                 background-color: #5bcfff;
             }
@@ -178,12 +219,25 @@ export default {
                 content: "";
                 position: absolute;
                 top: 2px;
-                right: 5px;
+                right: 6px;
                 width: 100px;
                 height: 2px;
                 background-color: #468ffe;
             }
         }
+        // .echartsLeft {
+        //     width: 200px;
+        //     height: 200px;
+        //     background-color: red;
+        //     clip-path: polygon(
+        //         75% 0%,
+        //         100% 50%,
+        //         75% 100%,
+        //         0% 100%,
+        //         25% 50%,
+        //         0% 0%
+        //     );
+        // }
     }
     .foot {
         width: 100%;

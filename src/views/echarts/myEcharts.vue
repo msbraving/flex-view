@@ -212,8 +212,11 @@ export default {
                     {
                         type: 'value',
                         // name: '水量',
-                        // min: 0,
-                        // max: 250,
+                        min: 200,
+                        max: 250,
+                        splitNumber: 5,
+                        // minInterval: 10,
+                        // maxInterval: 100,
                         // interval: 50,
                         axisTick: {
                             // 去除刻度
@@ -221,7 +224,7 @@ export default {
                         },
                         axisLabel: {
                             // 修饰刻度标签的颜色
-                            // formatter: '',
+                            formatter: `{value}%`,
                             textStyle: {
                                 color: 'rgba(255,255,255,.6)',
                                 fontSize: '11',

@@ -11,3 +11,8 @@ npm run serve
 自适应 postcss-px-to-viewport 将 px 转换成视口单位 vw ,100vw 即等于 100%
 
 版本中 echarts 使用旧版 4.9
+
+### 调查问卷
+
+element-ui
+拖拽使用 vuedraggable
